@@ -3,13 +3,13 @@ use \Michelf\MarkdownExtra;
 
 require 'phpmd/Michelf/MarkdownExtra.inc.php';
 
-/*class MDParser extends \Michelf\MarkdownExtra
-{
-
-
-}*/
-
-
+/** 
+ * Analyze and parse a MD file
+ *
+ * This class breaks the file in paragraphs, ando parse them individually. This
+ * is for (in the future) generating the ToC from the titles, and also write them
+ * as links.
+ */
 class MDparser extends MarkdownExtra
 {
 
@@ -36,22 +36,7 @@ class MDparser extends MarkdownExtra
                     $line .= PHP_EOL . PHP_EOL . array_shift($data);
                 }
             }
-            
-/*            if (substr($line, 0, 3) == '```') {
-                // seguimos leyendo hasta que encontremos nuevamente el ```
-                $more_lines = array_shift($data);
-                while ("forever") {
-                    $line .= $more_lines . PHP_EOL;
-                    
-                    $more_lines = array_shift($data);                    
-                    var_dump($more_lines);
-                    if (!$data || substr($more_lines, -3) == '```') { 
-                        break;
-                    }
-                }
-                
-            }*/
-        
+       
             $md = new self;
             $paragraph = $md->transform($line);
             
