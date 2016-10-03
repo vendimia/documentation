@@ -71,7 +71,7 @@ Use vendimia [module] --help for more module information.
 Ejecuta esta instrucción en `bash`:
 
 ```
-export VENDIMIA_BASE_PATH=~/Vendimia
+export VENDIMIA_BASE_PATH=~/vendimia
 ```
 
 ## Crear un nuevo proyecto
